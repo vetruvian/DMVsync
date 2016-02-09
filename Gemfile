@@ -45,3 +45,6 @@ group :development do
   gem 'spring'
 end
 
+# ADDED
+gem 'rails_12factor', group: :production
+
