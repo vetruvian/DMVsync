@@ -8,25 +8,47 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" style="color:#3385ff; font-weight:bold;">DMVsync™</a>
+      
+      <a class="navbar-brand" style="color:#3385ff; font-weight:bold;"><i class="fa fa-car" style="color:#000000"></i> DMVsync™</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">home</a></li>
-        <li><a href="#">about</a></li>
+
+        <% if current_user %>
+           <li><a href="#">appointments</a></li>
+
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">forms <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">change of address</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">bill of sale</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">application for duplicate title</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">statement of facts</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">special interests license plate</a></li>
+              </ul>
+          </li>
+
+        <% else %>
+          <li><a href="#">about</a></li>
+        <% end %>
+
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
         
-          <% if current_user %>
-            <li><%= link_to 'settings', edit_user_registration_path %> </li>          
-            <li><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to 'login', new_user_session_path %></li>
-            <li><%= link_to 'signup', new_user_registration_path %></li>
-          <% end %>
+        <% if current_user %>
+           <li><%= link_to 'settings', edit_user_registration_path %> </li>          
+          <li><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'login', new_user_session_path %></li>
+          <li><%= link_to 'signup', new_user_registration_path %></li>
+        <% end %>
 
 
       </ul>
