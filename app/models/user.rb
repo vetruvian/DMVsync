@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
     validates_presence_of :name
-    has_many :change_of_address
+    has_many :address
 end

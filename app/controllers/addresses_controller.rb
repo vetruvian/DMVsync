@@ -1,4 +1,5 @@
 class AddressesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy ]
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   # GET /addresses
@@ -25,6 +26,7 @@ class AddressesController < ApplicationController
   # POST /addresses.json
   def create
     @address = Address.new(address_params)
+    @address = current_user.addresses.new(address_params)
 
     respond_to do |format|
       if @address.save
@@ -69,6 +71,6 @@ class AddressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit(:first_name, :middle_name, :last_name, :drivers_license, :date_of_birth, :street_number, :street_name, :city, :state, :zip_code, :submitted_on, :user_id)
+      params.require(:address).permit(:first_name, :middle_name, :last_name, :drivers_license, :date_of_birth, :street_number, :street_name, :city, :state, :zip_code )
     end
 end
