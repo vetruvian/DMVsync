@@ -10,8 +10,8 @@ class Address < ActiveRecord::Base
     validates_presence_of :city
     validates_presence_of :state
     validates_presence_of :zip_code
-    validates_presence_of :submitted_on
-    validates_presence_of :user_id
+    #validates_presence_of :submitted_on
+    #validates_presence_of :user_id
 
     belongs_to :user
 

@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       
-      <a class="navbar-brand" style="color:#3385ff; font-weight:bold;"><i class="fa fa-car" style="color:#000000"></i> DMVsync™</a>
+      <a class="navbar-brand" style="color:#428DC8; font-weight:bold;"><i class="fa fa-car" style="color:#000000"></i> DMVsync™</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,10 +17,11 @@
       <ul class="nav navbar-nav">
 
         <% if current_user %>
-           <li><a href="#">appointments</a></li>
+           <li><a href='pages#appointments'>schedule an appointment</a></li>
+           <li><a href="pages#registrations">view your registrations</a></li>
 
            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">forms <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">view/submit forms <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to 'change of address', addresses_path %></li>
                 <li role="separator" class="divider"></li>
@@ -35,7 +36,7 @@
           </li>
 
         <% else %>
-          <li><a href="#">about</a></li>
+        
         <% end %>
 
       </ul>

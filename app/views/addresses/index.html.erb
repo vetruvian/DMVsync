@@ -15,9 +15,8 @@
         <td><%= address.first_name %> <%= address.middle_name %> <%= address.last_name %></td>
         <td><%= address.street_number %> <%= address.street_name %>, <%= address.city %> <%= address.state %> <%= address.zip_code %></td>
         <td><%= address.submitted_on %></td>
-        <td><%= link_to 'Show', address %></td>
-        <td><%= link_to 'Edit', edit_address_path(address) %></td>
-        <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View', address %></td>
+        <td><%= link_to 'Cancel Request', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,5 +24,5 @@
 
 <br>
 <% if current_user %> 
-<%= link_to 'Submit New Change of Address Request Form', new_address_path %>
+<a class="btn btn-primary btn-lg" role="button" <%= link_to 'Submit New Change of Address Request Form', new_address_path %>
 <% end %> 

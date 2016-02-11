@@ -1,5 +1,13 @@
-<H1>DMVsync</H1>
+<div class="jumbotron">
+  <h1 style="color:#000000">
+  	<span style="color:#000000">Welcome to </span>
+  	<span style="color:#428DC8">DMVsync!</span>
 
-<p>
-	The current time is: <%= Time.now %>
-</p>
+
+  </h1>
+  <p>The easiest way to view your current vehicle registration, submit a form to the DMV, and schedule an appointment.</p>
+  <p>
+  	<a class="btn btn-primary btn-lg" role="button" <%= link_to 'Login', new_user_session_path %>
+  	<a class="btn btn-primary btn-lg" role="button" <%= link_to 'Register', new_user_registration_path %>
+  </p>
+</div>
