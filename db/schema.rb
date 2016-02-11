@@ -11,10 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210193857) do
+ActiveRecord::Schema.define(version: 20160211005435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.string   "drivers_license"
+    t.date     "date_of_birth"
+    t.integer  "street_number"
+    t.string   "street_name"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip_code"
+    t.datetime "submitted_on"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "change_of_addresses", force: :cascade do |t|
+    t.string   "firstName"
+    t.string   "middleName"
+    t.string   "lastName"
+    t.string   "license"
+    t.integer  "dobMonth"
+    t.integer  "dobDay"
+    t.integer  "dobYear"
+    t.integer  "currentAddressNumber"
+    t.string   "currentAddressStreet"
+    t.string   "currentApartmentNumber"
+    t.string   "currentCity"
+    t.string   "currentState"
+    t.integer  "currentZipCode"
+    t.string   "vehicleNumberOne"
+    t.string   "vehicleNumberTwo"
+    t.string   "vehicleNumberThree"
+    t.integer  "newAddressNumber"
+    t.string   "newAddressStreet"
+    t.string   "newApartmentNumber"
+    t.string   "newCity"
+    t.string   "newState"
+    t.integer  "newZipCode"
+    t.integer  "user_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
