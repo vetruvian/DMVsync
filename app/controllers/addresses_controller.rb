@@ -6,6 +6,8 @@ class AddressesController < ApplicationController
   # GET /addresses.json
   def index
     @addresses = Address.all
+    #@addresses = current_user.addresses
+    #@addressess = id: current_user.GET(current_user)
   end
 
   # GET /addresses/1
@@ -25,8 +27,8 @@ class AddressesController < ApplicationController
   # POST /addresses
   # POST /addresses.json
   def create
-    @address = Address.new(address_params)
-    @address = current_user.address.new(address_params)
+    #@address = Address.new(address_params)
+    @address = current_user.addresses.new(address_params)
 
     respond_to do |format|
       if @address.save

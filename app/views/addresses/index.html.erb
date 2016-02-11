@@ -9,6 +9,7 @@
     </tr>
   </thead>
 
+  <% if current_user %> 
   <tbody>
     <% @addresses.each do |address| %>
       <tr>
@@ -20,6 +21,7 @@
       </tr>
     <% end %>
   </tbody>
+  <% end %>
 </table>
 
 <br>
