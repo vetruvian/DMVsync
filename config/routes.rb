@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  #get 'forms/home'
+
+  resources :appointments
   resources :addresses
+  resources :forms
   devise_for :users, controllers: { registrations: 'registrations'}
   root 'welcome#index'
-
-
-
 
 
   #root 'welcome#index'
