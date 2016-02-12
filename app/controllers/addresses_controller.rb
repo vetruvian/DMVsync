@@ -1,13 +1,16 @@
 class AddressesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy ]
   before_action :set_address, only: [:show, :edit, :update, :destroy]
+  #before_action :index, only: [:current_user]
+
+  
 
   # GET /addresses
   # GET /addresses.json
   def index
     @addresses = Address.all
-    #@addresses = current_user.addresses
-    #@addressess = id: current_user.GET(current_user)
+    #@addresses = Address.
+      
   end
 
   # GET /addresses/1
@@ -28,7 +31,7 @@ class AddressesController < ApplicationController
   # POST /addresses.json
   def create
     #@address = Address.new(address_params)
-    @address = current_user.addresses.new(address_params)
+    @address = current_user.address.new(address_params)
 
     respond_to do |format|
       if @address.save
