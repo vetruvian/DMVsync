@@ -4,6 +4,13 @@ class AddressesController < ApplicationController
   #before_action :index, only: [:current_user]
 
   
+def upload
+  uploaded_io = params[:address][:file]
+  File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+    file.write(uploaded_io.read)
+  end
+end
+
 
   # GET /addresses
   # GET /addresses.json
@@ -76,6 +83,6 @@ class AddressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit(:first_name, :middle_name, :last_name, :drivers_license, :date_of_birth, :street_number, :street_name, :city, :state, :zip_code )
+      params.require(:address).permit(:first_name, :middle_name, :last_name, :drivers_license, :date_of_birth, :street_number, :street_name, :city, :state, :zip_code, :file )
     end
 end
