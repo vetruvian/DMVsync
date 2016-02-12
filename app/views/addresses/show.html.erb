@@ -62,7 +62,8 @@
 
 <p>
   <strong>File:</strong>
-  <%= @address.file %>
+  <a class="btn btn-primary btn-sm" role="button" <%= link_to 'Form', @address.file %>
+  <%= filepicker_js_include_tag %>
 </p>
 
 

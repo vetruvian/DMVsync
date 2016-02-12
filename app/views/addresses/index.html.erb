@@ -1,10 +1,11 @@
-<h1>Submission History</h1>
+<h1>Submitted Forms</h1>
 
 <table class="table">
   <thead>
     <tr>
       <th>Name</th>
       <th>New Address</th>
+      <th>FORM</th>
       <th>Submitted On</th>
     </tr>
   </thead>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= address.first_name %> <%= address.middle_name %> <%= address.last_name %></td>
         <td><%= address.street_number %> <%= address.street_name %>, <%= address.city %> <%= address.state %> <%= address.zip_code %></td>
+        <td><%= link_to 'Form', address.file %></td>
         <td><%= address.submitted_on %></td>
         <td><%= link_to 'View', address %></td>
         <td><%= link_to 'Cancel Request', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,6 +28,6 @@
 
 <br>
 <% if current_user %> 
-<a class="btn btn-primary btn-lg" role="button" <%= link_to 'Submit New Change of Address Request Form', new_address_path %>
+<a class="btn btn-primary btn-lg" role="button" <%= link_to 'submit a new form', new_address_path %>
 <% end %> 
 
