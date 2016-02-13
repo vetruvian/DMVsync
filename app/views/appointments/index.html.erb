@@ -27,6 +27,6 @@
 
 <br>
 
-<% if current_user %>
-<%= link_to 'New Appointment', new_appointment_path %>
+<% if current_user %> 
+<a class="btn btn-primary btn-lg" role="button" <%= link_to 'schedule new appointment', new_appointment_path %>
 <% end %>
