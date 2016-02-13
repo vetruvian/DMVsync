@@ -15,8 +15,12 @@ end
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = Address.all
+    #@addresses = Address.all
+    #@addresses = @user.Address.all
     #@addresses = Address.
+    @user = current_user
+    @address = @user.address
+    @appointment = @user.appointment
       
   end
 

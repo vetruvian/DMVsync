@@ -6,20 +6,10 @@
 </p>
 
 <p>
-  <strong>Submitted on:</strong>
-  <%= @address.submitted_on %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @address.user_id %>
-</p>
-
-<p>
   <strong>File:</strong>
-  <a class="btn btn-primary btn-sm" role="button" <%= link_to 'Form', @address.file %>
+  <%= link_to 'Form', @address.file %>
   <%= filepicker_js_include_tag %>
 </p>
 
 
-<%= link_to 'Back', addresses_path %>
+<%= link_to 'return to forms list', addresses_path %> | <%= link_to 'return to dashboard', dashboard_path %>

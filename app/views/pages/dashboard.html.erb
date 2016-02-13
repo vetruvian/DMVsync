@@ -1,0 +1,59 @@
+<div class="jumbotron">
+<h1 style="color:#000000">
+  	<span style="color:#428DC8"><%= @user.name %></span>
+</h1>
+
+<div class="row">
+	
+
+	<!-- addresses(forms) -->
+	<div class="col-md-5">
+	<h3>Forms</h3>
+	<table class="table">
+	    <thead>
+			<tr>
+				<th>Name</th>
+				<th>Submitted</th>
+			</tr>
+	    </thead>
+
+		<tbody>
+			<% @address.each do |address|  %>
+				<tr>
+					<td><%= address.first_name %></td>
+					<td><%= time_ago_in_words(address.created_at) %> ago</td>
+					<td><%= link_to 'download', address.file %></td>
+					<td><%= link_to "cancel", address_path(address), method: :delete %></td>
+				</tr>
+			<% end %>
+
+		</tbody>
+	</table>
+	<a class="btn btn-primary btn-md" role="button" <%= link_to 'submit a new form', new_address_path %>
+	</div>
+
+	<!-- appointments -->
+	<div class="col-md-5">
+	<h3>Appointments</h3>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Reason</th>
+				<th>Date/Time</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @appointment.each do |appointment| %>
+				<tr>
+					<td><%= appointment.reason %></td>
+					<td><%= appointment.slot.to_s %></td>
+					<td><%= link_to 'view', appointment %></td>
+					<td><%= link_to "cancel", appointment_path(appointment), method: :delete %></td>
+				 </tr>
+			<% end %>
+		</tbody>
+		</table>
+		<a class="btn btn-primary btn-md" role="button" <%= link_to 'schedule new appointment', new_appointment_path %>
+		</div>
+</div>

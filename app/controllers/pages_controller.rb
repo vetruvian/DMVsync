@@ -1,7 +1,22 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy ]
-
+	before_action :authenticate_user!, only: [:dashboard]
   def home
+  	if current_user
+  		redirect_to dashboard_path
+  	end
   end
+
+
+  def dashboard
+  	@user = current_user
+  	@address = @user.address
+  	@appointment = @user.appointment
+
+
+
+  end
+
+
+
 
 end
