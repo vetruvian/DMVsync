@@ -4,10 +4,38 @@
   <div class="form-inputs">
 
     <%= f.label(:reason, "Reason for visit: ") %>
-    <%= f.select(:reason, { 'Permit Test' => "Permit Test", 'Drivers Test' => "Drivers Test", 'License Renewal' => "License Renewal", 'Vehicle Registration' => "Vehicle Registration", 'Title Transfer' => "Title Transfer", 'Pay Fees' => "Pay Fees", 'Other' => "Other"}) %>
+    <%= f.select(:reason, { 
+      'Permit Test' => "Permit Test", 
+      'Drivers Test' => "Drivers Test", 
+      'License Renewal' => "License Renewal", 
+      'Vehicle Registration' => "Vehicle Registration", 
+      'Title Transfer' => "Title Transfer", 
+      'Pay Fees' => "Pay Fees", 
+      'Other' => "Other"
+      }, :required => true) %>
     <br>
     <br>
-    <%= f.input :slot, required: true %>
+    <%= f.label(:appt, "Date/Time: ") %>
+    <%= f.select(:appt, { 
+      'Friday February 19th at 09:00am' => "Friday February 19th at 09:00am",
+      'Friday February 19th at 10:00am' => "Friday February 19th at 10:00am",
+      'Friday February 19th at 02:00pm' => "Friday February 19th at 02:00pm",
+      'Monday February 22nd at 09:00am' =>"Monday February 22nd at 09:00am",
+      'Monday February 22nd at 10:00am' => "Monday February 22nd at 10:00am",
+      'Monday February 22nd at 02:00pm' => "Monday February 22nd at 02:00pm",
+      'Tuesday February 23rd at 09:00am' => "Tuesday February 23rd at 09:00am",
+      'Tuesday February 23rd at 10:00am' => "Tuesday February 23rd at 10:00am",
+      'Tuesday February 23rd at 02:00pm' => "Tuesday February 23rd at 02:00pm",
+      'Wednesday February 24th at 09:00am' => "Wednesday February 24th at 09:00am",
+      'Wednesday February 24th at 10:00am' => "Wednesday February 24th at 10:00am",
+      'Wednesday February 24th at 02:00pm' => "Wednesday February 24th at 02:00pm",
+      'Thursday February 25th at 09:00am' => "Thursday February 25th at 09:00am",
+      'Thursday February 25th at 10:00am' => "Thursday February 25th at 10:00am",
+      'Thursday February 25th at 02:00pm' => "Thursday February 25th at 02:00pm"
+      }, :required => true) %>
+
+
+
   </div>
 
 

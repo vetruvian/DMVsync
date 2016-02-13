@@ -53,4 +53,8 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'filepicker-rails'
+gem 'bootstrap-datepicker-rails'
+gem 'simple-form-datepicker'
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails'
 

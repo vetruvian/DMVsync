@@ -19,7 +19,7 @@
     <% @appointment.each do |appointment| %>
       <tr>
         <td><%= appointment.reason %></td>
-        <td><%= appointment.slot %></td>
+        <td><%= appointment.appt %></td>
         <td><%= link_to 'view', appointment %></td>
         <td><%= link_to 'cancel', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

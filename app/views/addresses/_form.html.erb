@@ -1,11 +1,10 @@
 <%= simple_form_for(@address) do |f| %>
-  <%= f.error_notification %>
 
   <div class="form-inputs">
     
     
     <%= f.label(:first_name, "Form ID") %>
-    <%= f.select(:first_name, { 'DMV 14 - change of address' => "DMV 14", 'INF 1125 - request for registration record' => "INF 1125", 'SR 1 - traffic accident report' => "SR 1", 'REG 135 - bill of sale' => "REG 135", 'REG 138 - release of liability' => "REG 138", 'REG 227 - request for duplicate title' => "REG 227", 'REG 343 - request for title or registration' => "REG 343", 'REG 256 - statement of facts' => "REG 256", 'REG 17 - special interest license plate' => "REG 17", 'REG 156 - request for replacement items' => "REG 156"}) %>
+    <%= f.select(:first_name, { 'DMV 14 - change of address' => "DMV 14", 'INF 1125 - request for registration record' => "INF 1125", 'SR 1 - traffic accident report' => "SR 1", 'REG 135 - bill of sale' => "REG 135", 'REG 138 - release of liability' => "REG 138", 'REG 227 - request for duplicate title' => "REG 227", 'REG 343 - request for title or registration' => "REG 343", 'REG 256 - statement of facts' => "REG 256", 'REG 17 - special interest license plate' => "REG 17", 'REG 156 - request for replacement items' => "REG 156"}, :required => true) %>
 
   </div>
 
@@ -16,7 +15,7 @@
   <%= form_for @address do |f| %>
       <div>
         <%= f.label :file, "Select file:" %>
-        <%= f.filepicker_field :file %>
+        <%= f.filepicker_field :file, :required => true %>
 
       </div>
     <br>

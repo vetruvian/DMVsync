@@ -10,7 +10,7 @@
       <th>Form ID</th>
       <th>Submitted</th>
       <th>View Form</th>
-      <th>Cancel Form</th>
+      <th>Delete Form</th>
     </tr>
   </thead>
 
@@ -21,7 +21,7 @@
         <td><%= address.first_name %></td>
         <td><%= time_ago_in_words(address.created_at) %> ago</td>
         <td><%= link_to 'view', address.file %></td>
-        <td><%= link_to 'cancel', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'delete', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

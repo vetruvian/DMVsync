@@ -15,9 +15,6 @@ class Address < ActiveRecord::Base
     validates_presence_of :file
 
     belongs_to :user
-
-    array = Array.new
-    array << '1' << '2' << '3'
     
     
 
