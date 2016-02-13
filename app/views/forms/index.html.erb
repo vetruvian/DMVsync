@@ -1,4 +1,8 @@
-<h1>Forms</h1>
+<div class="jumbotron">
+
+<h1>Available Forms</h1>
+<br>
+<br>
 
 <table class ="table">
   <thead>
@@ -65,3 +69,12 @@
 
   </tbody>
 </table>
+
+<br>
+<% if current_user %> 
+<a class="btn btn-primary btn-lg" role="button" <%= link_to 'submit a new form', new_address_path %>
+<% end %> 
+
+
+
+</div>

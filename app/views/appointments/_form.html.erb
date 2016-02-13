@@ -2,13 +2,17 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :reason, required: true %>
+
+    <%= f.label(:reason, "Reason for visit: ") %>
+    <%= f.select(:reason, { 'Permit Test' => "Permit Test", 'Drivers Test' => "Drivers Test", 'License Renewal' => "License Renewal", 'Vehicle Registration' => "Vehicle Registration", 'Title Transfer' => "Title Transfer", 'Pay Fees' => "Pay Fees", 'Other' => "Other"}) %>
+    <br>
+    <br>
     <%= f.input :slot, required: true %>
   </div>
 
 
 
-
+  <br>
 
   <div class="form-actions">
   	<%= f.submit 'schedule appointment', class: 'btn btn-primary btn-lg'%>
@@ -16,6 +20,6 @@
 
 
 
-  <br>
+  
 
   <% end %>

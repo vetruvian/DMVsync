@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
 	before_action :authenticate_user!, only: [:dashboard]
+
   def home
-  	if current_user
-  		redirect_to dashboard_path
-  	end
+    if current_user 
+      redirect_to dashboard_path
+    end
   end
 
 
@@ -11,12 +12,6 @@ class PagesController < ApplicationController
   	@user = current_user
   	@address = @user.address
   	@appointment = @user.appointment
-
-
-
   end
-
-
-
 
 end

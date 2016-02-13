@@ -1,19 +1,20 @@
 <div class="jumbotron">
-<h1 style="color:#000000">
-  	<span style="color:#428DC8"><%= @user.name %></span>
-</h1>
+<h1>Dashboard</h1>
+<br>
 
 <div class="row">
 	
 
 	<!-- addresses(forms) -->
 	<div class="col-md-5">
-	<h3>Forms</h3>
+	<h2 style="color:#428DC8;">Forms</h2>
 	<table class="table">
 	    <thead>
 			<tr>
-				<th>Name</th>
+				<th>Form ID</th>
 				<th>Submitted</th>
+				<th>View Form</th>
+      			<th>Cancel Form</th>
 			</tr>
 	    </thead>
 
@@ -22,7 +23,7 @@
 				<tr>
 					<td><%= address.first_name %></td>
 					<td><%= time_ago_in_words(address.created_at) %> ago</td>
-					<td><%= link_to 'download', address.file %></td>
+					<td><%= link_to 'view', address.file %></td>
 					<td><%= link_to "cancel", address_path(address), method: :delete %></td>
 				</tr>
 			<% end %>
@@ -34,7 +35,7 @@
 
 	<!-- appointments -->
 	<div class="col-md-5">
-	<h3>Appointments</h3>
+	<h2 style="color:#428DC8;">Appointments</h2>
 	<table class="table">
 		<thead>
 			<tr>

@@ -1,15 +1,19 @@
+<div class="jumbotron">
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Form Name:</strong>
+  <strong>form ID:</strong>
   <%= @address.first_name %>
 </p>
 
 <p>
-  <strong>File:</strong>
-  <%= link_to 'Form', @address.file %>
+  <strong>view:</strong>
+  <%= link_to 'link', @address.file %>
   <%= filepicker_js_include_tag %>
 </p>
 
 
 <%= link_to 'return to forms list', addresses_path %> | <%= link_to 'return to dashboard', dashboard_path %>
+
+</div>

@@ -1,12 +1,16 @@
-<h1>Forms</h1>
+<div class="jumbotron">
+
+<h1>Submitted Forms</h1>
+<br>
+<br>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Form Name</th>
-      <th>Download Form</th>
-      <th>View Submission</th>
-      <th>Cancel Submission</th>
+      <th>Form ID</th>
+      <th>Submitted</th>
+      <th>View Form</th>
+      <th>Cancel Form</th>
     </tr>
   </thead>
 
@@ -15,8 +19,8 @@
     <% @address.each do |address| %>
       <tr>
         <td><%= address.first_name %></td>
-        <td><%= link_to 'download', address.file %></td>
-        <td><%= link_to 'view', address %></td>
+        <td><%= time_ago_in_words(address.created_at) %> ago</td>
+        <td><%= link_to 'view', address.file %></td>
         <td><%= link_to 'cancel', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -28,3 +32,5 @@
 <% if current_user %> 
 <a class="btn btn-primary btn-lg" role="button" <%= link_to 'submit a new form', new_address_path %>
 <% end %> 
+
+</div>
