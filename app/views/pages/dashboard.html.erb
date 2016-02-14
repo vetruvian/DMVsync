@@ -51,10 +51,13 @@
 					<td><%= appointment.slot.to_s %></td>
 					<td><%= link_to 'view', appointment %></td>
 					<td><%= link_to "cancel", appointment_path(appointment), method: :delete %></td>
+
 				 </tr>
 			<% end %>
 		</tbody>
 		</table>
 		<a class="btn btn-primary btn-md" role="button" <%= link_to 'schedule new appointment', new_appointment_path %>
 		</div>
+
+		
 </div>
